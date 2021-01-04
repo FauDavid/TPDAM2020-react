@@ -95,7 +95,10 @@ const Detalle = ({route: {params}, ...props}) => {
   const navigator = useNavigation();
   const {producto} = params;
   const {obtenerCategoriasDelProducto} = useContext(StoreContext);
+  const {obtenerCompradoresDelProducto} = useContext(StoreContext);
   const categorias = obtenerCategoriasDelProducto(producto);
+  const compradores = obtenerCompradoresDelProducto(producto);
+
   const [categoriasModal, setCategoriasModal] = useState(false);
 
   return (
@@ -140,6 +143,16 @@ const Detalle = ({route: {params}, ...props}) => {
       <Text>Categorias:</Text>
       <FlatList
         data={categorias}
+        horizontal
+        renderItem={({item}) => (
+          <View style={[styles.chip, {backgroundColor: item.color}]}>
+            <Text>{item.nombre}</Text>
+          </View>
+        )}
+      />
+      <Text>Compradores:</Text>
+      <FlatList
+        data={compradores}
         horizontal
         renderItem={({item}) => (
           <View style={[styles.chip, {backgroundColor: item.color}]}>

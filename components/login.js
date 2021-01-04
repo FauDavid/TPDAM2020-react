@@ -57,9 +57,9 @@ export const Login = ({navigation}) => {
       alert('Por favor ingrese un email');
       return;
     }
-    const data = compradores.map((item) => {
-      if (item.email === emailComprador) {
-        navigation.navigate(screens.homepage,{item},);
+    compradores.map((logueado) => {
+      if (logueado.email === emailComprador) {
+        navigation.navigate(screens.homepage,{logueado},);
       }
     });
 

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 });
 
 const Listar = ({route}) => {
-  const {productos} = useContext(StoreContext);
+  const {productos, agregarProductoAComprador} = useContext(StoreContext);
   const navigator = useNavigation();
 
   return (
@@ -26,6 +26,9 @@ const Listar = ({route}) => {
               precio={producto.price}
               onPressVerDetalles={() => {
                 navigator.navigate(screens.detalle, {producto});
+              }}
+              onPressComprar={() => {
+                navigator.navigate(screens.comprar, {producto});
               }}
               key={producto.id}
             />

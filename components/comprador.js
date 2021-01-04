@@ -129,7 +129,6 @@ export const Comprador = () => {
     setCompradores(NewData);
   };
 
-
   const quitarComprador = (itemEditado) => {
     Alert.alert(
       'Quitar comprador',
@@ -237,7 +236,7 @@ export const Comprador = () => {
       </View>
     </View>
   );
-};
+} ;
 
 const PantallaNuevo = ({
   nombreNuevoComprador,

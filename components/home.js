@@ -38,7 +38,7 @@ export const Home = ({route}) => {
     <View
       style={{flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
       <Text style={styles.homeTittle}>Bienvenido Comprador:</Text>
-      <Text style={styles.homeTittle}> { route.params.item.nombre } </Text>
+      <Text style={styles.homeTittle}> { route.params.logueado.nombre } </Text>
       <View style={styles.container}>
         <Button
           style={styles.button}

@@ -15,7 +15,6 @@ export const StoreProvider = ({children}) => {
     {nombre: 'Categoria 4', color: 'yellow', id: Math.random().toString(10)},
   ]);
   const [categoriasProductos, setCategoriasProductos] = useState({});
-
   const [compradores, setCompradores] = useState([
     {
       nombre: 'Fausto David',
@@ -28,6 +27,7 @@ export const StoreProvider = ({children}) => {
       id: Math.random().toString(10),
     },
   ]);
+  const [compradoresProductos, setCompradoresProductos] = useState({});
 
   const fetchData = async () => {
     try {
@@ -81,6 +81,35 @@ export const StoreProvider = ({children}) => {
     return results;
   };
 
+  const agregarProductoAComprador = (comprador, producto) => {
+    if (!comprador?.id || !producto?.id) {
+      return; // No hay id de comprador o producto
+    }
+    const compradoresProductos = compradoresProductos[comprador.id] ?? [];
+    if (!compradoresProductos.includes(producto.id)) {
+      //Si no esta lo agregamos
+      const newCompradoresProductos = {
+        ...compradoresProductos,
+        [comprador.id]: [...compradoresProductos, producto.id],
+      };
+      setCompradoresProductos(newCompradoresProductos);
+    }
+  };
+
+  const obtenerCompradoresDelProducto = (producto) => {
+    const compradoresId = Object.keys(compradoresProductos);
+    const compradoresIdDelProducto = compradoresId.reduce(
+      (acc, cur) =>
+        compradoresProductos[cur].includes(producto.id) ? [...acc, cur] : acc,
+      [],
+    );
+    const results = compradores.filter((c) =>
+      compradoresIdDelProducto.includes(c.id),
+    );
+    return results;
+  };
+
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -97,6 +126,8 @@ export const StoreProvider = ({children}) => {
         agregarProductoACategoria,
         quitarProductoDeCategoria,
         obtenerCategoriasDelProducto,
+        obtenerCompradoresDelProducto,
+        agregarProductoAComprador,
       }}>
       {children}
     </StoreContext.Provider>

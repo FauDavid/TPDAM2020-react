@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Tarjeta = ({titulo, precio, onPressVerDetalles}) => {
+const Tarjeta = ({titulo, precio, onPressVerDetalles, onPressComprar}) => {
   return (
     <Card style={styles.card}>
       <View style={styles.tituloContainer}>
@@ -35,7 +35,9 @@ const Tarjeta = ({titulo, precio, onPressVerDetalles}) => {
         <Button appearance="outline" onPress={onPressVerDetalles}>
           Ver Detalles
         </Button>
-        <Button status="success">COMPRAR</Button>
+        <Button appearance="outline" onPress={onPressComprar}>
+          COMPRAR
+        </Button>
       </View>
     </Card>
   );

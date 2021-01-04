@@ -20,7 +20,8 @@ import {Home} from './components/home';
 import {Login} from './components/login';
 import {ListaCategorias} from './components/listaCategorias';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
-import Comprador from './components/comprador';
+import {Comprador} from './components/comprador';
+import {Comprar} from './components/comprar';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ export const screens = {
   homepage: 'Pagina Principal',
   listaCategorias: 'Categorias',
   comprador: 'Comprador',
+  comprar: 'Comprar',
   modificarComprador: 'Modificar comprador',
   altaComprador: 'Dar de alta comprador',
   bajaComprador: 'Dar de baja comprador',
@@ -58,6 +60,7 @@ const App = () => {
               component={ListaCategorias}
             />
             <Stack.Screen name={screens.comprador} component={Comprador} />
+            <Stack.Screen name={screens.comprar} component={Comprar} />
           </Stack.Navigator>
         </NavigationContainer>
       </StoreProvider>
