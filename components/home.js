@@ -3,7 +3,7 @@ import React from 'react';
 import {Button} from '@ui-kitten/components';
 import {screens} from '../App';
 import {useNavigation} from '@react-navigation/native';
-import Usuario from './usuarios';
+import Usuario from './comprador';
 
 const styles = StyleSheet.create({
   container: {
@@ -57,8 +57,8 @@ export const Home = () => {
           style={styles.button}
           appearance="outline"
           status="info"
-          onPress={() => navigator.navigate(screens.usuario)}>
-          USUARIO
+          onPress={() => navigator.navigate(screens.comprador)}>
+          COMPRADOR
         </Button>
       </View>
     </View>

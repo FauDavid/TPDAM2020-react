@@ -15,6 +15,18 @@ export const StoreProvider = ({children}) => {
     {nombre: 'Categoria 4', color: 'yellow', id: Math.random().toString(10)},
   ]);
   const [categoriasProductos, setCategoriasProductos] = useState({});
+  const [compradores, setCompradores] = useState([
+    {
+      nombre: 'Fausto David',
+      email: 'faus.david.7@gmail.com',
+      id: Math.random().toString(10),
+    },
+    {
+      nombre: 'Diego Acosta',
+      email: 'diegomartinfrsf@gmail.com',
+      id: Math.random().toString(10),
+    },
+  ]);
 
   const fetchData = async () => {
     try {
@@ -79,6 +91,8 @@ export const StoreProvider = ({children}) => {
         setProductos,
         categorias,
         setCategorias,
+        compradores,
+        setCompradores,
         agregarProductoACategoria,
         quitarProductoDeCategoria,
         obtenerCategoriasDelProducto,
