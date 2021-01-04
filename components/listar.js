@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Listar = ({...props}) => {
+const Listar = ({route}) => {
   const {productos} = useContext(StoreContext);
   const navigator = useNavigation();
 

@@ -15,6 +15,7 @@ export const StoreProvider = ({children}) => {
     {nombre: 'Categoria 4', color: 'yellow', id: Math.random().toString(10)},
   ]);
   const [categoriasProductos, setCategoriasProductos] = useState({});
+
   const [compradores, setCompradores] = useState([
     {
       nombre: 'Fausto David',

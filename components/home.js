@@ -4,6 +4,7 @@ import {Button} from '@ui-kitten/components';
 import {screens} from '../App';
 import {useNavigation} from '@react-navigation/native';
 import Usuario from './comprador';
+import { StoreContext } from "../context/storeContext";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,19 +32,19 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Home = () => {
+export const Home = ({route}) => {
   const navigator = useNavigation();
-
   return (
     <View
       style={{flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <Text style={styles.homeTittle}>Bienvenidos!</Text>
+      <Text style={styles.homeTittle}>Bienvenido Comprador:</Text>
+      <Text style={styles.homeTittle}> { route.params.item.nombre } </Text>
       <View style={styles.container}>
         <Button
           style={styles.button}
           appearance="outline"
           status="info"
-          onPress={() => navigator.navigate(screens.listar)}>
+          onPress={() => navigator.navigate(screens.listar, {route})}>
           LISTAR PRODUCTOS
         </Button>
         <Button
@@ -58,7 +59,7 @@ export const Home = () => {
           appearance="outline"
           status="info"
           onPress={() => navigator.navigate(screens.comprador)}>
-          COMPRADOR
+          COMPRADORES
         </Button>
       </View>
     </View>
