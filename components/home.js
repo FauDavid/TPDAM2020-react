@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 
 export const Home = ({route}) => {
   const navigator = useNavigation();
+  const logueado = route.params.logueado;
   return (
     <View
       style={{flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
@@ -44,7 +45,7 @@ export const Home = ({route}) => {
           style={styles.button}
           appearance="outline"
           status="info"
-          onPress={() => navigator.navigate(screens.listar, {route})}>
+          onPress={() => navigator.navigate(screens.listar, { logueado })}>
           LISTAR PRODUCTOS
         </Button>
         <Button

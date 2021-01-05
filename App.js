@@ -49,7 +49,6 @@ const App = () => {
             <Stack.Screen
               initial={true}
               name={screens.login}
-              options={{headerShown: false}}
               component={Login}
             />
             <Stack.Screen name={screens.listar} component={Listar} />

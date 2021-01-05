@@ -28,7 +28,7 @@ const Listar = ({route}) => {
                 navigator.navigate(screens.detalle, {producto});
               }}
               onPressComprar={() => {
-                navigator.navigate(screens.comprar, {producto});
+                agregarProductoAComprador(route.params.logueado,producto);
               }}
               key={producto.id}
             />

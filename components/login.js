@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    borderColor: 'blue',
-    borderWidth: 2,
+    borderColor: 'darkgray',
+    borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
     backgroundColor: 'white',
@@ -59,7 +59,7 @@ export const Login = ({navigation}) => {
     }
     compradores.map((logueado) => {
       if (logueado.email === emailComprador) {
-        navigation.navigate(screens.homepage,{logueado},);
+        navigation.navigate(screens.homepage, {logueado});
       }
     });
 
@@ -91,7 +91,7 @@ const PantallaLogin = ({
         }}
         />
       <Button
-        style={styles.modalButton}
+        style={styles.button}
         onPress={() => ingresar()}>
         INGRESAR
       </Button>

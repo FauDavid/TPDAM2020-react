@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    borderColor: 'blue',
-    borderWidth: 2,
+    borderColor: 'darkgray',
+    borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
     backgroundColor: 'white',

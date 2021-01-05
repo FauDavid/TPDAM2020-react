@@ -83,14 +83,14 @@ export const StoreProvider = ({children}) => {
 
   const agregarProductoAComprador = (comprador, producto) => {
     if (!comprador?.id || !producto?.id) {
-      return; // No hay id de comprador o producto
+      return; // No hay id de categoria o producto
     }
-    const compradoresProductos = compradoresProductos[comprador.id] ?? [];
-    if (!compradoresProductos.includes(producto.id)) {
+    const compradorProducto = compradoresProductos[comprador.id] ?? [];
+    if (!compradorProducto.includes(producto.id)) {
       //Si no esta lo agregamos
       const newCompradoresProductos = {
         ...compradoresProductos,
-        [comprador.id]: [...compradoresProductos, producto.id],
+        [comprador.id]: [...compradorProducto, producto.id],
       };
       setCompradoresProductos(newCompradoresProductos);
     }
