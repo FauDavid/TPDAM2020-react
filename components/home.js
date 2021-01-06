@@ -4,12 +4,14 @@ import {Button} from '@ui-kitten/components';
 import {screens} from '../App';
 import {useNavigation} from '@react-navigation/native';
 import Usuario from './comprador';
-import { StoreContext } from "../context/storeContext";
+import {StoreContext} from '../context/storeContext';
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
-    flexWrap: 'wrap',
+    width: '100%',
+    height: '90%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     margin: 2,
@@ -23,8 +25,10 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   homeTittle: {
-    fontSize: 25,
+    flex: 1,
+    fontSize: 18,
     fontWeight: 'bold',
+    marginTop: 30,
   },
   ghostContainer: {
     marginTop: 30,
@@ -37,30 +41,31 @@ export const Home = ({route}) => {
   const logueado = route.params.logueado;
   return (
     <View
-      style={{flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <Text style={styles.homeTittle}>Bienvenido Comprador:</Text>
-      <Text style={styles.homeTittle}> { route.params.logueado.nombre } </Text>
+      style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text style={styles.homeTittle}>
+        Bienvenido Comprador: {route.params.logueado.nombre}
+      </Text>
       <View style={styles.container}>
         <Button
           style={styles.button}
           appearance="outline"
           status="info"
-          onPress={() => navigator.navigate(screens.listar, { logueado })}>
-          LISTAR PRODUCTOS
+          onPress={() => navigator.navigate(screens.listar, {logueado})}>
+          Listar productos
         </Button>
         <Button
           style={styles.button}
           appearance="outline"
           status="info"
           onPress={() => navigator.navigate(screens.listaCategorias)}>
-          VER CATEGORÍAS
+          Ver categorías
         </Button>
         <Button
           style={styles.button}
           appearance="outline"
           status="info"
           onPress={() => navigator.navigate(screens.comprador)}>
-          COMPRADORES
+          Compradores
         </Button>
       </View>
     </View>

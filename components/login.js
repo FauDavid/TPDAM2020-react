@@ -44,6 +44,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginVertical: 10,
   },
+  loginButtonSection: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  loginTextSection: {
+    width: '100%',
+    height: '30%',
+  },
 });
 
 
@@ -81,7 +91,7 @@ const PantallaLogin = ({
                          ingresar,
                        }) => {
   return (
-    <>
+    <View style={styles.loginButtonSection}>
       <TextInput
         placeholder="Email comprador"
         style={styles.textInput}
@@ -92,10 +102,12 @@ const PantallaLogin = ({
         />
       <Button
         style={styles.button}
+        appearance="outline"
+        status="info"
         onPress={() => ingresar()}>
-        INGRESAR
+        Ingresar
       </Button>
-      </>
+      </View>
       );
 };
 

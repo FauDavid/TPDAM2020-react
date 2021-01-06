@@ -28,7 +28,7 @@ const Stack = createStackNavigator();
 export const screens = {
   listar: 'Listado de Productos',
   detalle: 'Detalle de Producto',
-  login: 'Ingreso al Sistema',
+  login: 'Login',
   homepage: 'Pagina Principal',
   listaCategorias: 'Categorias',
   comprador: 'Comprador',

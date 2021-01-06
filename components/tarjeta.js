@@ -36,7 +36,7 @@ const Tarjeta = ({titulo, precio, onPressVerDetalles, onPressComprar}) => {
           Ver Detalles
         </Button>
         <Button appearance="outline" onPress={onPressComprar}>
-          COMPRAR
+          Comprar
         </Button>
       </View>
     </Card>
